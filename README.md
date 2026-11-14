@@ -3,7 +3,7 @@
 Bengali text-to-speech demo for the **Kiki TTS v2** voice
 (a separate single-speaker VITS model, fresh from the EMTIAZZ base:
 2,528 clips, 70 epochs, resumed from checkpoint_16500 after the first
-session died at step 16,500 / epoch 54; best model step TBD at finish).
+session died at step 16,500 / epoch 54; best model step 18307).
 
 Open the app, type or paste Bengali text, press **অডিও বানাও**, listen,
 download the WAV.
@@ -31,5 +31,6 @@ exact byte size AND MD5 before use, then caches it:
 - The Kiki v2 vocab (92 tokens) uses ONLY decomposed forms (য+়/ড+়/ঢ+়),
   so typed Bengali is normalized before generation (see normalize_text()
   in tts_engine.py). This is the documented Kiki orthography rule.
-- Model constants (MODEL_SIZE/MODEL_MD5/TOKENS_SIZE/TOKENS_MD5) are filled
-  at finish from the ONNX export — see DEMO_PREP.md.
+- Model constants verified at finish: model.onnx 114,192,746 bytes
+  (MD5 177bb81652e55d6babee638fbee49f99); tokens_sherpa.txt 605 bytes
+  (MD5 366751e11c26877a07828e4cbd3e7d7d).
